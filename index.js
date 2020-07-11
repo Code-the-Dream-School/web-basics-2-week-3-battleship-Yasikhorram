@@ -196,6 +196,9 @@ function actionPlayer1() {
     player2.gameBoard[xNum][yNum] = 0;
     player2.shipCount -= 1;
     console.log("player2 " + player2.shipCount);
+
+    alert("HIT! "
+      player2.name " has " + player2.shipCount + " ships left.")
   } else {
     alert("Miss!")
 
@@ -212,6 +215,9 @@ function actionPlayer2() {
     player1.gameBoard[xNum][yNum] = 0;
     player1.shipCount -= 1;
     console.log("player1 " + player1.shipCount);
+    alert("HIT! "
+      player1.name " has " + player1.shipCount + " ships left.")
+
   } else {
     alert("Miss!")
     console.log("Miss!");
@@ -239,9 +245,9 @@ const battleship = () => {
     }
   }
   if (player1.shipCount === 0) {
-    return "The winner is Player 2!";
+    return "The winner is " + player2.name + "!";
   } else {
-    return "The winner is Player 1!";
+    return "The winner is " + player1.name + "!";
   }
 
 }
