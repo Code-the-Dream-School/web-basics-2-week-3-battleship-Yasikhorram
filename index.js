@@ -218,27 +218,33 @@ function actionPlayer2() {
   }
 }
 
-var player = 0;
-//if one of the players has no ship the game ends
-while (player1.shipCount > 0 && player2.shipCount > 0) {
-  // when the number is even
-  if (player % 2 == 0) {
-    // we want to player1 move.
-    actionPlayer1();
-    player++;
-  } else {
-    actionPlayer2();
-    player++;
+
+
+
+
+
+
+const battleship = () => {
+  var player = 0;
+  //if one of the players has no ship the game ends
+  while (player1.shipCount > 0 && player2.shipCount > 0) {
+    // when the number is even
+    if (player % 2 == 0) {
+      // we want to player1 move.
+      actionPlayer1();
+      player++;
+    } else {
+      actionPlayer2();
+      player++;
+    }
   }
+  if (player1.shipCount === 0) {
+    return "The winner is Player 2!";
+  } else {
+    return "The winner is Player 1!";
+  }
+
 }
-if (player1.shipCount === 0) {
-  console.log("The winner is Player 2!");
-} else {
-  console.log("The winner is Player 1!");
-}
-
-
-
 
 
 
